@@ -1,0 +1,55 @@
+{
+    "DnsName":  "EPTCH-LAPTOP-19",
+    "KeyUsage":  [
+                     "DigitalSignature",
+                     "KeyEncipherment"
+                 ],
+    "KeyLength":  2048,
+    "NotAfter":  "2025-05-19",
+    "devops":  {
+                   "username":  "epicgroupllc\\monika",
+                   "password":  "",
+                   "address":  "epicdevops.epicgroupllc.net",
+                   "operation":  [
+                                     {
+                                         "source":  "Build",
+                                         "destination":  "Simplifyi3_R2"
+                                     }
+                                 ]
+               },
+    "AppPools":  [
+                     {
+                         "Name":  "Simplifyi3AppPool",
+                         "ManagedRuntimeVersion":  "v4.0",
+                         "ManagedPipelineMode":  "Integrated"
+                     }
+                 ],
+    "Sites":  [
+                  {
+                      "Name":  "Simplifyi3Web",
+                      "AppPoolName":  "Simplifyi3AppPool",
+                      "PhysicalPath":  "C:\\inetpub\\wwwroot\\Web",
+                      "Bindings":  [
+                                       {
+                                           "Protocol":  "https",
+                                           "IPAddress":  "192.168.20.74",
+                                           "Port":  8081,
+                                           "Hostname":  ""
+                                       }
+                                   ]
+                  },
+                  {
+                      "Name":  "Simplifyi3WebAPI",
+                      "AppPoolName":  "Simplifyi3AppPool",
+                      "PhysicalPath":  "C:\\inetpub\\wwwroot\\WebAPI",
+                      "Bindings":  [
+                                       {
+                                           "Protocol":  "https",
+                                           "IPAddress":  "192.168.20.74",
+                                           "Port":  8082,
+                                           "Hostname":  ""
+                                       }
+                                   ]
+                  }
+              ]
+}
